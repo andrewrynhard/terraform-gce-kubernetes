@@ -11,6 +11,7 @@ module "configuration" {
   "cluster_name"                       = "example"
   "trustd_password"                    = "${module.security.trustd_password}"
   "kubernetes_token"                   = "${module.security.kubeadm_token}"
+  "kubernetes_certificate_key"         = "${module.security.kubeadm_certificate_key}"
   "kubernetes_ca_key"                  = "${module.security.kubernetes_ca_key}"
   "master_hostnames"                   = "${var.gce_talos_master_ips}"
   "pod_subnet"                         = "10.244.0.1/16"
