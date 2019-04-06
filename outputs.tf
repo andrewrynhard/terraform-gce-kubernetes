@@ -1,3 +1,3 @@
-output "talos_admin_config" {
+output "talosconfig" {
 	value = "${module.security.talos_admin_config}"
 }

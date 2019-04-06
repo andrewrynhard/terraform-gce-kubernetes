@@ -24,12 +24,6 @@ module "configuration" {
   "talos_ca_key"                       = "${module.security.talos_ca_key}"
 }
 
-resource "local_file" "admin_config" {
-  depends_on = ["module.security"]
-  content    = "${module.security.talos_admin_config}"
-  filename   = "configs/admin.conf"
-}
-
 resource "google_compute_instance" "master_init_create" {
   name         = "${var.talos_cluster_name}-master-0"
   machine_type = "${var.gce_talos_flavor}"
